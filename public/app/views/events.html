@@ -1,0 +1,38 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<table style="width: 100%">
+			<tr>
+				<td style="text-align: left; vertical-align: middle; width: 20%;">
+					<button ng-click="navigate('/')" type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-chevron-left"></span> Back</button>
+				</td>
+				<td style="text-align: center; vertical-align: middle; width: 60%;">
+					<strong>Introduce</strong>
+				</td>
+				<td style="text-align: right; vertical-align: middle; width: 20%;">
+					&nbsp;
+				</td>
+			</tr>
+		</table>
+	</div>	
+	<div class="panel-body">
+		<p class="list-group-item-text"><strong>{{event.name}}</strong></p>
+		<p class="list-group-item-text">{{event.start | date:'short'}} ({{(event.end - event.start) / 3600000}} hrs)</p>
+	</div>
+	<div class="panel-footer">
+		<table style="width: 100%">
+			<tr>
+				<td style="text-align: left; vertical-align: top; width: 20%";>
+					<button ng-if="event.end >= now" ng-click="navigate('/meetings/' + event.$id)" type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-user"></span> Join</button>
+					<span ng-if="! (event.end >= now)" ng-click="navigate('/meetings/' + event.$id)">&nbsp;</span> 
+				</td>
+				<td style="text-align: right; vertical-align: bottom; width: 60%;">
+					<p><strong>Sponsored by:</strong></p>
+				</td>
+				<td style="text-align: right; vertical-align: top; width: 20%";>
+					<a  href="{{event.link}}" target="_blank"><img ng-src="{{event.image}}" class="img-responsive img-thumbnail"/></a>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+

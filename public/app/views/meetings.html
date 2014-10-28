@@ -1,0 +1,39 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<table style="width: 100%">
+			<tr>
+				<td style="text-align: left; vertical-align: middle; width: 20%;">
+					<button ng-click="navigateBack();" type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-chevron-left"></span> Back</button>
+				</td>
+				<td style="text-align: center; vertical-align: middle; width: 60%;">
+					<strong>Introduce</strong>
+				</td>
+				<td style="text-align: right; vertical-align: middle; width: 20%;">
+					&nbsp;
+				</td>
+			</tr>
+		</table>
+	</div>	
+	<div class="panel-body">
+		<div ng-if="anotherInMeeting">Another In Meeting</div>
+		<div class="panel panel-default" ng-if="inMeeting">
+			<div class="panel-heading">
+				Participants	
+			</div>
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="person in persons| orderBy:'first'">
+					<table style="width: 100%">
+						<tr>
+							<td style="text-align: left; vertical-align: middle; width: 20%">
+								<img ng-src="{{person.picture}}" class="img-responsive img-thumbnail"/>
+							</td>
+							<td style="text-align: center; vertical-align: middle; width: 80%">
+								<strong>{{person.first}}<strong>
+							</td>
+						</tr>
+					</table>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
