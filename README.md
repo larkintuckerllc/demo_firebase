@@ -1,5 +1,5 @@
-Introduce
-=========
+Demo Firebase
+=============
 
 This is essentially a first real application, i.e., post "Hello World", using the [Firebase](http://firebase.com) realtime backend system. The key functionality that it exercises are data management, authentication (e.g., Facebook), authorization, and realtime updates.
 
