@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 2014-10-28v1
+# 2014-10-31v1
 
 CACHE:
 
@@ -30,6 +30,7 @@ views/home.html
 views/error.html
 views/login.html
 views/events.html
+views/events_editor.html
 app.js
 app.css
 controllers/meetings.js

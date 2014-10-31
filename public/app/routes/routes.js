@@ -20,6 +20,14 @@ angular.module('myApp').config(['$routeProvider', function($routeProvider) {
                         templateUrl: 'views/events.html',
                         controller: 'EventsCtrl'
                 }).
+                when('/events_editor', {
+                        templateUrl: 'views/events_editor.html',
+                        controller: 'EventsEditorCtrl'
+                }).
+                when('/events_editor/:id', {
+                        templateUrl: 'views/events_editor.html',
+                        controller: 'EventsEditorCtrl'
+                }).
                 when('/meetings/:id', {
                         templateUrl: 'views/meetings.html',
                         controller: 'MeetingsCtrl'

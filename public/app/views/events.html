@@ -9,7 +9,7 @@
 					<strong>Introduce</strong>
 				</td>
 				<td style="text-align: right; vertical-align: middle; width: 20%;">
-					&nbsp;
+					<button ng-if="! (now > event.start && now < event.end)" ng-click="navigate('/events_editor/' + event.$id)" type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-edit"></span> Edit</button>
 				</td>
 			</tr>
 		</table>
@@ -22,7 +22,7 @@
 		<table style="width: 100%">
 			<tr>
 				<td style="text-align: left; vertical-align: top; width: 20%";>
-					<button ng-if="event.end >= now" ng-click="navigate('/meetings/' + event.$id)" type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-user"></span> Join</button>
+					<button ng-if="now > event.start && now < event.end" ng-click="navigate('/meetings/' + event.$id)" type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-user"></span> Join</button>
 					<span ng-if="! (event.end >= now)" ng-click="navigate('/meetings/' + event.$id)">&nbsp;</span> 
 				</td>
 				<td style="text-align: right; vertical-align: bottom; width: 60%;">
@@ -35,4 +35,3 @@
 		</table>
 	</div>
 </div>
-

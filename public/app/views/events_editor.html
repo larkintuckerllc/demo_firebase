@@ -1,0 +1,63 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<table style="width: 100%">
+			<tr>
+				<td style="text-align: left; vertical-align: middle; width: 20%;">
+					<button ng-if="id" ng-click="navigate('/events/' + id)" type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-chevron-left"></span> Back</button>
+					<button ng-if="! id" ng-click="navigate('/')" type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-chevron-left"></span> Back</button>
+				</td>
+				<td style="text-align: center; vertical-align: middle; width: 60%;">
+					<strong>Introduce</strong>
+				</td>
+				<td style="text-align: right; vertical-align: middle; width: 20%;">
+					&nbsp;
+				</td>
+			</tr>
+		</table>
+	</div>	
+	<div class="panel-body">
+		<form name="editor" role="form">
+			<div ng-class="{'form-group': true,  'has-feedback': true,  'has-error': (editor.name.$error.required)}">
+				<label class="control-label" for="name">Name</label>
+				<input type="text" name="name" class="form-control" id="name" placeholder="Name" maxlength="140" ng-model="name" required>
+			</div>
+			<div ng-class="{'form-group': true,  'has-feedback': true,  'has-error': (editor.startdate.$error.date || editor.startdate.$error.required)}">
+				<label class="control-label" for="startdate">Start Date</label>
+				<input type="date" name="startdate" class="form-control"  id="startdate" placeholder="yyyy-MM-dd" ng-model="startdate" required>
+			</div>
+			<div ng-class="{'form-group': true,  'has-feedback': true,  'has-error': (editor.starttime.$error.time || editor.starttime.$error.required)}">
+				<label class="control-label" for="starttime">Start Time</label>
+				<input type="time" name="starttime" class="form-control"  id="starttime" placeholder="HH:mm:ss" ng-model="starttime" required>
+			</div>
+			<div ng-class="{'form-group': true,  'has-feedback': true,  'has-error': (editor.enddate.$error.date || editor.enddate.$error.required)}">
+				<label class="control-label" for="end">End Date</label>
+				<input type="date" name="enddate" class="form-control" id="enddate" placeholder="yyyy-MM-dd" ng-model="enddate" required>
+			</div>
+			<div ng-class="{'form-group': true,  'has-feedback': true,  'has-error': (editor.endtime.$error.time || editor.endtime.$error.required)}">
+				<label class="control-label" for="endtime">End Time</label>
+				<input type="time" name="endtime" class="form-control"  id="endtime" placeholder="HH:mm:ss" ng-model="endtime" required>
+			</div>
+		</form>
+	</div>
+	<div class="panel-footer">
+		<table style="width: 100%">
+			<tr>
+				<td style="text-align: left; vertical-align: top; width: 20%";>
+					<button ng-if="id
+						&& validForm()"
+						ng-click="update()" type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-save"></span> Update</button>
+					<button ng-if="! id
+						&& validForm()"
+						ng-click="add()" type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-save"></span> Add</button>
+				</td>
+				<td style="text-align: right; vertical-align: bottom; width: 60%;">
+					&nbsp;
+				</td>
+				<td style="text-align: right; vertical-align: top; width: 20%";>
+					<button ng-if="id" ng-click="delete()" type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-remove"></span> Delete</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
